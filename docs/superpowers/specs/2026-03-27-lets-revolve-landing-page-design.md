@@ -6,9 +6,8 @@ Single-page landing page for Lets Revolve, a Dutch accounting/advisory firm. Mod
 
 ## Tech Stack
 
-- **Vite** + **TypeScript**
+- **Vite** + **React** + **TypeScript**
 - **Tailwind CSS v4**
-- Single `index.html` entry with `src/main.ts`
 - Google Fonts: DM Sans
 
 ## Brandbook
@@ -120,16 +119,22 @@ linear-gradient(135deg, #0F172A 0%, #0284C7 80%, #0EA5E9 100%)
 lets_resolve/
 ├── index.html
 ├── src/
-│   ├── main.ts          # Navbar scroll effect, smooth scroll, mobile menu
-│   └── style.css        # Tailwind directives + custom font import
+│   ├── main.tsx                # React entry point
+│   ├── App.tsx                 # Root component, assembles all sections
+│   ├── index.css               # Tailwind directives + custom font import
+│   └── components/
+│       ├── Navbar.tsx           # Fixed navbar with scroll effect
+│       ├── Hero.tsx             # Gradient hero section
+│       ├── About.tsx            # "Wie zijn wij" section
+│       ├── Services.tsx         # Services 2×2 grid
+│       └── Footer.tsx           # Dark footer
 ├── public/
 │   └── (empty for now)
 ├── docs/
 │   └── brandbook.html
 ├── package.json
 ├── tsconfig.json
-├── vite.config.ts
-└── tailwind.config.ts   # (if needed — Tailwind v4 may use CSS config)
+└── vite.config.ts
 ```
 
 ## Out of Scope

@@ -1,36 +1,79 @@
+import { useReveal } from "../hooks/useReveal";
+
 const services = [
-  { icon: "📊", name: "Boekhouding en administratie" },
-  { icon: "💰", name: "Salarisadministratie" },
-  { icon: "📈", name: "Financiële administratie" },
-  { icon: "📄", name: "Facturatie en debiteurenbeheer" },
+  {
+    name: "Boekhouding en administratie",
+    description: "Overzichtelijke boekhouding, altijd op orde",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+      </svg>
+    ),
+  },
+  {
+    name: "Salarisadministratie",
+    description: "Correcte en tijdige salarisverwerking",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Financiële administratie",
+    description: "Inzicht in uw financiële positie",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Facturatie en debiteurenbeheer",
+    description: "Efficiënt beheer van uw geldstromen",
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+      </svg>
+    ),
+  },
 ];
 
 export default function Services() {
+  const ref = useReveal();
+
   return (
     <section
       id="dienstverlening"
-      className="bg-cloud py-20 md:py-28 lg:py-32 px-6"
+      className="relative bg-cloud py-24 md:py-32 lg:py-40 px-6 overflow-hidden"
     >
-      <div className="max-w-[1200px] mx-auto text-center">
-        <p className="text-primary text-xs font-medium tracking-[3px] uppercase mb-3">
+      {/* Subtle background accent */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+
+      <div ref={ref} className="reveal relative max-w-[1200px] mx-auto text-center">
+        <p className="text-primary text-[11px] font-semibold tracking-[4px] uppercase mb-4">
           Wat wij doen
         </p>
-        <h2 className="text-heading text-3xl md:text-4xl font-semibold leading-[1.2] mb-4">
+        <h2 className="text-heading text-3xl md:text-[42px] font-bold leading-[1.15] mb-6">
           Onze dienstverlening
         </h2>
-        <div className="w-12 h-[3px] bg-primary rounded-full mx-auto mb-12" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-[800px] mx-auto">
-          {services.map((service) => (
+        <div className="w-10 h-[2px] bg-primary/40 mx-auto mb-14" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-[820px] mx-auto">
+          {services.map((service, i) => (
             <div
               key={service.name}
-              className="bg-white border border-gray-200 rounded-xl p-8 text-center transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(14,165,233,0.12)]"
+              className="group relative bg-white rounded-2xl p-8 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(14,165,233,0.1)] border border-gray-100 hover:border-primary/20"
+              style={{ transitionDelay: `${i * 50}ms` }}
             >
-              <div className="w-12 h-12 bg-linear-135 from-sky-100 to-sky-200 rounded-xl mx-auto mb-4 flex items-center justify-center text-xl">
+              <div className="w-11 h-11 rounded-xl bg-primary/[0.08] flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-heading text-base font-semibold">
+              <h3 className="text-heading text-[15px] font-semibold mb-1.5">
                 {service.name}
               </h3>
+              <p className="text-muted text-sm leading-relaxed">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
