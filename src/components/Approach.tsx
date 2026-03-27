@@ -65,32 +65,24 @@ export default function Approach() {
 
         {/* Image + values layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left: Image composition */}
-          <div className="relative">
-            <div className="relative">
-              {/* Main image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
-                <img
-                  src={approach1}
-                  alt="Professionele financiële dienstverlening"
-                  className="w-full h-[280px] md:h-[340px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-dark/40 to-transparent" />
-              </div>
-
-              {/* Second image, offset and overlapping */}
-              <div className="relative -mt-16 ml-12 md:ml-20 mr-0 rounded-2xl overflow-hidden shadow-2xl shadow-black/30 border-4 border-slate-dark">
-                <img
-                  src={approach2}
-                  alt="Data-analyse en financieel inzicht"
-                  className="w-full h-[200px] md:h-[240px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-dark/30 to-transparent" />
-              </div>
+          {/* Left: Images stacked */}
+          <div className="flex flex-col gap-5">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
+              <img
+                src={approach1}
+                alt="Professionele financiële dienstverlening"
+                className="w-full h-[240px] md:h-[280px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-dark/30 to-transparent" />
             </div>
-
-            {/* Decorative accent */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-l-2 border-t-2 border-primary/20 rounded-tl-2xl pointer-events-none" />
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
+              <img
+                src={approach2}
+                alt="Data-analyse en financieel inzicht"
+                className="w-full h-[240px] md:h-[280px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-dark/30 to-transparent" />
+            </div>
           </div>
 
           {/* Right: Three values */}
