@@ -21,6 +21,7 @@ export default function Footer() {
           <div className="flex gap-8 mb-10">
             {[
               { label: "Wie zijn wij", id: "over-ons" },
+              { label: "Onze aanpak", id: "onze-aanpak" },
               { label: "Dienstverlening", id: "dienstverlening" },
             ].map((item) => (
               <button

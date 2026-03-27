@@ -48,6 +48,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-10">
           {[
             { label: "Wie zijn wij", id: "over-ons" },
+            { label: "Onze aanpak", id: "onze-aanpak" },
             { label: "Dienstverlening", id: "dienstverlening" },
           ].map((item) => (
             <button
@@ -109,6 +110,7 @@ export default function Navbar() {
         <div className="bg-white/90 backdrop-blur-xl px-6 py-5 flex flex-col gap-4 border-t border-gray-100">
           {[
             { label: "Wie zijn wij", id: "over-ons" },
+            { label: "Onze aanpak", id: "onze-aanpak" },
             { label: "Dienstverlening", id: "dienstverlening" },
           ].map((item) => (
             <button
