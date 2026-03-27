@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lets Revolve — Brandbook</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #FFFFFF;
+    color: #334155;
+    line-height: 1.6;
+  }
+
+  /* Cover */
+  .cover {
+    background: linear-gradient(135deg, #0F172A 0%, #0284C7 80%, #0EA5E9 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+  }
+  .cover-label {
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .cover-wordmark {
+    font-size: 64px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+  }
+  .cover-wordmark span { color: #38BDF8; }
+  .cover-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .cover-scroll {
+    position: absolute;
+    bottom: 40px;
+    color: rgba(255,255,255,0.3);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+  }
+
+  /* Sections */
+  .section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+  .section-dark {
+    background: #0F172A;
+    color: #e2e8f0;
+  }
+  .section-light {
+    background: #F8FAFC;
+  }
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #0EA5E9;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .section-dark .section-title { color: #FFFFFF; }
+  .section-desc {
+    font-size: 16px;
+    color: #64748B;
+    max-width: 600px;
+    margin-bottom: 48px;
+    line-height: 1.7;
+  }
+  .section-dark .section-desc { color: #94a3b8; }
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: #0EA5E9;
+    border-radius: 2px;
+    margin-bottom: 48px;
+  }
+
+  /* Logo Section */
+  .logo-variants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+  .logo-card {
+    border-radius: 16px;
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+  }
+  .logo-card-light {
+    background: #FFFFFF;
+    border: 1px solid #e2e8f0;
+  }
+  .logo-card-dark {
+    background: #0F172A;
+  }
+  .logo-card-gradient {
+    background: linear-gradient(135deg, #0F172A 0%, #0284C7 100%);
+  }
+  .logo-card-blue {
+    background: #0EA5E9;
+  }
+  .logo-text {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .logo-card-label {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .logo-card-dark .logo-card-label,
+  .logo-card-gradient .logo-card-label,
+  .logo-card-blue .logo-card-label { color: rgba(255,255,255,0.4); }
+
+  /* Colors */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .color-swatch {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+  }
+  .color-swatch-block {
+    height: 120px;
+  }
+  .color-swatch-info {
+    padding: 16px 20px;
+    background: white;
+  }
+  .color-swatch-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F172A;
+    margin-bottom: 4px;
+  }
+  .color-swatch-hex {
+    font-size: 13px;
+    color: #64748B;
+    font-family: 'DM Sans', monospace;
+  }
+  .color-swatch-use {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-top: 4px;
+  }
+
+  /* Typography */
+  .type-specimens {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .type-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .type-meta {
+    min-width: 180px;
+    flex-shrink: 0;
+  }
+  .type-meta-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #0EA5E9;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+  .type-meta-spec {
+    font-size: 13px;
+    color: #94a3b8;
+  }
+  .type-sample {
+    flex: 1;
+    color: #0F172A;
+  }
+
+  /* Spacing */
+  .spacing-demo {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .spacing-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .spacing-bar {
+    height: 40px;
+    background: linear-gradient(90deg, #0EA5E9, #38BDF8);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .spacing-label {
+    min-width: 140px;
+    font-size: 13px;
+    color: #64748B;
+  }
+
+  /* Components */
+  .components-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 48px;
+  }
+  .comp-card {
+    background: #F8FAFC;
+    border-radius: 16px;
+    padding: 32px;
+  }
+  .comp-card-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #0EA5E9;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: #0EA5E9;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    margin-right: 12px;
+    margin-bottom: 8px;
+  }
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: #0EA5E9;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid #0EA5E9;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 8px;
+  }
+  .btn-dark {
+    display: inline-block;
+    background: #0F172A;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    margin-right: 12px;
+    margin-bottom: 8px;
+  }
+  .service-card-demo {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .service-card-demo:hover {
+    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.12);
+    transform: translateY(-2px);
+  }
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+    border-radius: 12px;
+    margin: 0 auto 12px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .service-card-demo h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0F172A;
+    margin-bottom: 4px;
+  }
+  .service-card-demo p {
+    font-size: 13px;
+    color: #64748B;
+  }
+
+  /* Nav demo */
+  .nav-demo {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-demo-brand {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .nav-demo-brand span { color: #0EA5E9; }
+  .nav-demo-links {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    color: #64748B;
+  }
+  .nav-demo-links a {
+    color: #64748B;
+    text-decoration: none;
+  }
+
+  /* Hero demo */
+  .hero-demo {
+    background: linear-gradient(135deg, #0F172A 0%, #0284C7 80%, #0EA5E9 100%);
+    border-radius: 12px;
+    padding: 48px 32px;
+    text-align: center;
+    color: white;
+  }
+  .hero-demo h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: white;
+  }
+  .hero-demo p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  /* Full width wrappers */
+  .full-width { margin-left: -40px; margin-right: -40px; padding-left: 40px; padding-right: 40px; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-label">Brand Guidelines 2026</div>
+  <div class="cover-wordmark"><span>Lets</span> Revolve</div>
+  <div class="cover-sub">Visual Identity & Design System</div>
+  <div class="cover-scroll">↓ Scroll to explore</div>
+</div>
+
+<!-- 01 LOGO -->
+<div class="section">
+  <div class="section-label">01 — Wordmark</div>
+  <div class="section-title">Logo & Wordmark</div>
+  <div class="section-desc">
+    The Lets Revolve wordmark uses DM Sans Bold. "Lets" is set in sky blue (#0EA5E9) and "Revolve" in the contextual contrast color. The two-tone split reinforces the brand's dual nature: approachable yet professional.
+  </div>
+  <div class="divider"></div>
+  <div class="logo-variants">
+    <div class="logo-card logo-card-light">
+      <div class="logo-text"><span style="color: #0EA5E9;">Lets</span> <span style="color: #0F172A;">Revolve</span></div>
+      <div class="logo-card-label">On white</div>
+    </div>
+    <div class="logo-card logo-card-dark">
+      <div class="logo-text"><span style="color: #38BDF8;">Lets</span> <span style="color: #FFFFFF;">Revolve</span></div>
+      <div class="logo-card-label">On dark</div>
+    </div>
+    <div class="logo-card logo-card-gradient">
+      <div class="logo-text" style="color: white;"><span style="color: #38BDF8;">Lets</span> Revolve</div>
+      <div class="logo-card-label">On gradient</div>
+    </div>
+    <div class="logo-card logo-card-blue">
+      <div class="logo-text" style="color: white;">Lets Revolve</div>
+      <div class="logo-card-label">On brand blue — monochrome</div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 COLORS -->
+<div class="section-light">
+  <div class="section" style="padding-top: 100px; padding-bottom: 100px;">
+    <div class="section-label">02 — Colors</div>
+    <div class="section-title">Color Palette</div>
+    <div class="section-desc">
+      A light, airy palette anchored by sky blue. White dominates the layout, with the dark slate reserved for hero sections and footer. Blue is the primary action and accent color.
+    </div>
+    <div class="divider"></div>
+    <div class="color-grid">
+      <div class="color-swatch">
+        <div class="color-swatch-block" style="background: #0EA5E9;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Sky Blue — Primary</div>
+          <div class="color-swatch-hex">#0EA5E9 · rgb(14, 165, 233)</div>
+          <div class="color-swatch-use">Buttons, links, accents, wordmark</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-block" style="background: #0284C7;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Ocean Blue — Primary Dark</div>
+          <div class="color-swatch-hex">#0284C7 · rgb(2, 132, 199)</div>
+          <div class="color-swatch-use">Hover states, gradient endpoint</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-block" style="background: #38BDF8;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Light Blue — Primary Light</div>
+          <div class="color-swatch-hex">#38BDF8 · rgb(56, 189, 248)</div>
+          <div class="color-swatch-use">Highlights on dark, gradient accents</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-block" style="background: #0F172A;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Slate Dark</div>
+          <div class="color-swatch-hex">#0F172A · rgb(15, 23, 42)</div>
+          <div class="color-swatch-use">Hero gradient start, footer, headings</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-block" style="background: #F8FAFC;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">Cloud Grey</div>
+          <div class="color-swatch-hex">#F8FAFC · rgb(248, 250, 252)</div>
+          <div class="color-swatch-use">Alternating section backgrounds</div>
+        </div>
+      </div>
+      <div class="color-swatch">
+        <div class="color-swatch-block" style="background: #FFFFFF; border-bottom: 1px solid #e2e8f0;"></div>
+        <div class="color-swatch-info">
+          <div class="color-swatch-name">White</div>
+          <div class="color-swatch-hex">#FFFFFF · rgb(255, 255, 255)</div>
+          <div class="color-swatch-use">Main background, cards</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text colors -->
+    <h3 style="margin-top: 48px; margin-bottom: 24px; font-size: 20px; color: #0F172A;">Text Colors</h3>
+    <div style="display: flex; gap: 24px;">
+      <div style="flex: 1; display: flex; align-items: center; gap: 16px; padding: 20px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+        <div style="width: 40px; height: 40px; background: #0F172A; border-radius: 8px; flex-shrink: 0;"></div>
+        <div>
+          <div style="font-size: 14px; font-weight: 600; color: #0F172A;">Headings</div>
+          <div style="font-size: 12px; color: #94a3b8;">#0F172A</div>
+        </div>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; gap: 16px; padding: 20px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+        <div style="width: 40px; height: 40px; background: #334155; border-radius: 8px; flex-shrink: 0;"></div>
+        <div>
+          <div style="font-size: 14px; font-weight: 600; color: #0F172A;">Body text</div>
+          <div style="font-size: 12px; color: #94a3b8;">#334155</div>
+        </div>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; gap: 16px; padding: 20px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+        <div style="width: 40px; height: 40px; background: #64748B; border-radius: 8px; flex-shrink: 0;"></div>
+        <div>
+          <div style="font-size: 14px; font-weight: 600; color: #0F172A;">Muted / secondary</div>
+          <div style="font-size: 12px; color: #94a3b8;">#64748B</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 03 TYPOGRAPHY -->
+<div class="section">
+  <div class="section-label">03 — Typography</div>
+  <div class="section-title">Type System</div>
+  <div class="section-desc">
+    DM Sans is the sole typeface — used across all weights. Its humanist proportions feel warm and approachable while maintaining a clean, modern look.
+  </div>
+  <div class="divider"></div>
+  <div class="type-specimens">
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-label">Hero Heading</div>
+        <div class="type-meta-spec">DM Sans Bold · 48–56px</div>
+        <div class="type-meta-spec">Line-height: 1.1</div>
+      </div>
+      <div class="type-sample" style="font-size: 48px; font-weight: 700; line-height: 1.1;">
+        Met passie voor ons vak
+      </div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-label">Section Heading</div>
+        <div class="type-meta-spec">DM Sans Semibold · 32–36px</div>
+        <div class="type-meta-spec">Line-height: 1.2</div>
+      </div>
+      <div class="type-sample" style="font-size: 34px; font-weight: 600; line-height: 1.2;">
+        Wie zijn wij?
+      </div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-label">Body</div>
+        <div class="type-meta-spec">DM Sans Regular · 16–18px</div>
+        <div class="type-meta-spec">Line-height: 1.7</div>
+      </div>
+      <div class="type-sample" style="font-size: 17px; font-weight: 400; line-height: 1.7; color: #334155;">
+        Onze waarden vormen de basis van onze identiteit en de manier waarop wij werken. Wat voor onze klanten belangrijk is, staat bij Lets Revolve altijd centraal.
+      </div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">
+        <div class="type-meta-label">Label</div>
+        <div class="type-meta-spec">DM Sans Medium · 12–14px</div>
+        <div class="type-meta-spec">Uppercase · Tracking +3px</div>
+      </div>
+      <div class="type-sample" style="font-size: 13px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #0EA5E9;">
+        Onze dienstverlening
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 04 SPACING -->
+<div class="section-dark">
+  <div class="section" style="padding-top: 100px; padding-bottom: 100px;">
+    <div class="section-label">04 — Spacing</div>
+    <div class="section-title">Whitespace & Rhythm</div>
+    <div class="section-desc">
+      Generous whitespace is core to the brand. Sections breathe with large padding. Content stays within a readable max-width column.
+    </div>
+    <div class="divider"></div>
+    <div class="spacing-demo">
+      <div class="spacing-row">
+        <div class="spacing-label">Section padding</div>
+        <div class="spacing-bar" style="width: 100%;">80–120px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">Content max-width</div>
+        <div class="spacing-bar" style="width: 80%;">1200px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">Text column</div>
+        <div class="spacing-bar" style="width: 55%;">700px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">Card gap</div>
+        <div class="spacing-bar" style="width: 25%;">24–32px</div>
+      </div>
+      <div class="spacing-row">
+        <div class="spacing-label">Element spacing</div>
+        <div class="spacing-bar" style="width: 15%;">16px</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 05 COMPONENTS -->
+<div class="section">
+  <div class="section-label">05 — Components</div>
+  <div class="section-title">UI Elements</div>
+  <div class="section-desc">
+    Core building blocks for the landing page. Buttons, cards, and navigation styled to the brand.
+  </div>
+  <div class="divider"></div>
+  <div class="components-grid">
+    <!-- Buttons -->
+    <div class="comp-card">
+      <div class="comp-card-label">Buttons</div>
+      <div>
+        <button class="btn-primary">Meer weten</button>
+        <button class="btn-outline">Contact</button>
+      </div>
+      <div style="margin-top: 12px;">
+        <button class="btn-dark">Ontdek meer</button>
+      </div>
+    </div>
+    <!-- Service Card -->
+    <div class="comp-card">
+      <div class="comp-card-label">Service Card</div>
+      <div class="service-card-demo">
+        <div class="service-icon">📊</div>
+        <h4>Boekhouding</h4>
+        <p>Administratie & boekhouding</p>
+      </div>
+    </div>
+    <!-- Navigation -->
+    <div class="comp-card" style="grid-column: span 2;">
+      <div class="comp-card-label">Navigation</div>
+      <div class="nav-demo">
+        <div class="nav-demo-brand"><span>Lets</span> Revolve</div>
+        <div class="nav-demo-links">
+          <a href="#">Wie zijn wij</a>
+          <a href="#">Dienstverlening</a>
+        </div>
+      </div>
+    </div>
+    <!-- Hero Preview -->
+    <div class="comp-card" style="grid-column: span 2;">
+      <div class="comp-card-label">Hero Section</div>
+      <div class="hero-demo">
+        <div style="color: #38BDF8; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px;">LETS REVOLVE</div>
+        <h2>Met passie voor ons vak</h2>
+        <p style="margin-top: 12px;">Wij streven ernaar om iedere ondernemer te ondersteunen met een persoonlijke, passende en pragmatische aanpak.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 06 GRADIENT -->
+<div class="section-light">
+  <div class="section" style="padding-top: 100px; padding-bottom: 100px;">
+    <div class="section-label">06 — Gradient</div>
+    <div class="section-title">Brand Gradient</div>
+    <div class="section-desc">
+      The signature gradient runs from dark slate to ocean blue. Used for the hero section and as an accent element.
+    </div>
+    <div class="divider"></div>
+    <div style="border-radius: 16px; overflow: hidden;">
+      <div style="height: 120px; background: linear-gradient(135deg, #0F172A 0%, #0284C7 80%, #0EA5E9 100%); display: flex; align-items: center; justify-content: center;">
+        <div style="color: white; font-size: 14px; font-weight: 500; letter-spacing: 1px;">
+          linear-gradient(135deg, #0F172A → #0284C7 → #0EA5E9)
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 16px; margin-top: 24px;">
+      <div style="flex: 1; height: 60px; border-radius: 12px; background: linear-gradient(90deg, #0F172A, #0284C7, #0EA5E9);"></div>
+      <div style="flex: 1; height: 60px; border-radius: 12px; background: linear-gradient(180deg, #0F172A, #0284C7);"></div>
+      <div style="flex: 1; height: 60px; border-radius: 12px; background: radial-gradient(circle at 30% 50%, #0EA5E9, #0284C7, #0F172A);"></div>
+    </div>
+    <div style="display: flex; gap: 16px; margin-top: 8px;">
+      <div style="flex: 1; text-align: center; font-size: 12px; color: #94a3b8;">Horizontal</div>
+      <div style="flex: 1; text-align: center; font-size: 12px; color: #94a3b8;">Vertical</div>
+      <div style="flex: 1; text-align: center; font-size: 12px; color: #94a3b8;">Radial</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="background: #0F172A; padding: 60px 40px; text-align: center;">
+  <div style="font-size: 24px; font-weight: 700; color: white; margin-bottom: 8px;"><span style="color: #38BDF8;">Lets</span> Revolve</div>
+  <div style="font-size: 13px; color: #475569;">Brand Guidelines · 2026</div>
+</div>
+
+</body>
+</html>
